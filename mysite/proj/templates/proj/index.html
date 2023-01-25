@@ -18,13 +18,21 @@
             <th>
                 nazvanie
             </th>
+            <th>
+                time
+            </th>
+            <th>
+                audit
+            </th>
         </tr>
     </thead>
     <tbody>
-    {% for result in spektakl%}
+    {% for result in predmet%}
     <tr>
         <td>{{result.id}}</td>
         <td>{{result.nazvanie}}</td>
+        <td>{{result.time}}</td>
+        <td>{{result.audit}}</td>
     </tr>
     {% endfor %}
     </tbody>
@@ -37,48 +45,35 @@
                 id
             </th>
             <th>
-                spektakl
+                login
             </th>
              <th>
-                sektor
+                passw
             </th>
              <th>
-                mesto
-            </th>
-             <th>
-                tel
-            </th>
-             <th>
-                sms
-            </th>
-            <th>
-                time
+                propusk
             </th>
         </tr>
     </thead>
     <tbody>
-    {% for result in mesta%}
+    {% for result in uchet%}
     <tr>
         <td>{{result.id}}</td>
-        <td>{{result.spektakl}}</td>
-        <td>{{result.sektor}}</td>
-        <td>{{result.mesto}}</td>
-        <td>{{result.tel}}</td>
-        <td>{{result.sms}}</td>
-        <td>{{result.time}}</td>
-
+        <td>{{result.login}}</td>
+        <td>{{result.passw}}</td>
+        <td>{{result.propusk}}</td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
 <br>
-<h1>Add Function</h1>
+<!--<h1>Add Function</h1>
     {% for result in mesta %}
         <p>
             Sum of {{result.id}}
             and {{result.sms}}
             is {{result.id|add:result.sms}}
         </p>
-    {% endfor %}
+    {% endfor %}-->
 </body>
 </html>

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import spektakl, mesta
+from .models import predmet, uchet
 import sqlite3
 # Create your views here.
 
@@ -8,10 +8,12 @@ def index(request):
     return HttpResponse("Hello world!")
 
 def plswork(request):
-    query = spektakl.objects.all()
-    query1 = mesta.objects.all()
+    query = predmet.objects.all()
+    query1 = uchet.objects.all()
     print(request)
-    return render(request, 'proj/index.html', {"spektakl":query}, {"mesta":query1})
+    return render(request, 'proj/index.html', {"predmet":query,
+                                               "uchet": query1
+                                               })
 
 def mygod():
     connection = sqlite3.connect('db.sqlite3')

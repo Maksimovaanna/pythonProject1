@@ -1,25 +1,23 @@
 from django.contrib import admin
-from .models import spektakl, mesta
+from .models import predmet, uchet
 
 # Register your models here.
 
-class spektaklAdmin(admin.ModelAdmin):
+class predmetAdmin(admin.ModelAdmin):
     fieldsets1 = [
         ('id', {'fields': ['id']}),
-        ('nazvanie', {'fields': ['nazvanie']})
+        ('nazvanie', {'fields': ['nazvanie']}),
+        ('time', {'fields': ['time']}),
+        ('audit', {'fields': ['audit']}),
     ]
 
-class mestaAdmin(admin.ModelAdmin):
+class uchetAdmin(admin.ModelAdmin):
     fieldsets2 = [
         ('id', {'fields': ['id']}),
-        ('spektakl', {'fields': ['spektakl']}),
-        ('sektor', {'fields': ['sektor']}),
-        ('mesto', {'fields': ['mesto']}),
-        ('tel', {'fields': ['tel']}),
-        ('sms', {'fields': ['sms']}),
-        ('time', {'fields': ['time']}),
-
+        ('login', {'fields': ['login']}),
+        ('passw', {'fields': ['passw']}),
+        ('propusk', {'fields': ['propusk']}),
     ]
 
-admin.site.register(spektakl, spektaklAdmin)
-admin.site.register(mesta, mestaAdmin)
+admin.site.register(predmet, predmetAdmin)
+admin.site.register(uchet, uchetAdmin)
