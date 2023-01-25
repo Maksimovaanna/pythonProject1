@@ -11,11 +11,11 @@ services:
     ports:
       - '5432:5432'
   web:
-    build: ../pythonProject123/
+    build: ../forexam/
     command: python manage.py runserver 0.0.0.0:8000
     image: lab-three
     volumes:
-      - ./mysite:/home/test/PycharmProjects/pythonProject123/mysite
+      - ./mysite:/home/test/PycharmProjects/pythonProject1/mysite
     #- ./templates:/etc/nginx/templates
     ports:
     - "8000:8000"
