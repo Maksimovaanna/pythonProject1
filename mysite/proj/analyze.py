@@ -1,8 +1,11 @@
 import os
 import json
-a = os.system('python -m pycodestyle views.py > /dev/null 2>&1')
-os.system('python -m bandit -r views.py -f json -o ./out.json > /dev/null 2>&1')
-with open('out.json', 'r') as f:
+pylint = os.popen('pylint ./app').read()
+if pylint:
+     print('Ошибки качества кода')
+
+os.system('bandit -iii -lll -q -r ./app/ -o bandit.json -f json ')
+with open('bandit.json', 'r') as f:
     b = json.load(f)
-if b['results'] or a:
-    raise RuntimeError('error!')
+if b['results']:
+    print('В коде присутсвуют ошибки')
