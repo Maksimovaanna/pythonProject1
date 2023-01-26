@@ -1,5 +1,5 @@
 from django.test import TestCase
-from proj.models import uchet
+from proj.models import car
 from proj.views import plswork, mygod
 
 class StudentModelTest(TestCase):
@@ -7,31 +7,31 @@ class StudentModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         # Set up non-modified objects used by all test methods
-        uchet.objects.create(id='1', login='Fedor', passw='passw', propusk='123')
+        car.objects.create(id='1', moddel='Toyota', nomer='12kf3r23', voditel='Anna', online='da')
 
     def test_id_label(self):
-        test = uchet.objects.get(id=1)
+        test = car.objects.get(id=1)
         field_label = test._meta.get_field('id').verbose_name
         self.assertEquals(field_label, 'id')
 
-    def test_login_label(self):
-        test = uchet.objects.get(id=1)
-        field_label = test._meta.get_field('login').verbose_name
-        self.assertEquals(field_label, 'login')
+    def test_model_label(self):
+        test = car.objects.get(id=1)
+        field_label = test._meta.get_field('moddel').verbose_name
+        self.assertEquals(field_label, 'moddel')
 
-    def test_passw_label(self):
-        test = uchet.objects.get(id=1)
-        field_label = test._meta.get_field('passw').verbose_name
-        self.assertEquals(field_label, 'passw')
+    def test_nomer_label(self):
+        test = car.objects.get(id=1)
+        field_label = test._meta.get_field('nomer').verbose_name
+        self.assertEquals(field_label, 'nomer')
 
     def test_login_max_length(self):
-        test = uchet.objects.get(id=1)
-        max_length = test._meta.get_field('login').max_length
+        test = car.objects.get(id=1)
+        max_length = test._meta.get_field('moddel').max_length
         self.assertEquals(max_length, 50)
 
     def test_passw_max_length(self):
-        test = uchet.objects.get(id=1)
-        max_length = test._meta.get_field('passw').max_length
+        test = car.objects.get(id=1)
+        max_length = test._meta.get_field('nomer').max_length
         self.assertEquals(max_length, 50)
 
     def test_for_display(self):
@@ -40,4 +40,4 @@ class StudentModelTest(TestCase):
 
     def test_for_records(self):
         expected_num = mygod()
-        self.assertEquals(expected_num, 3)
+        self.assertEquals(expected_num, 2)
