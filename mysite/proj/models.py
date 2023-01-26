@@ -2,16 +2,19 @@ from django.db import models
 from django.urls import reverse
 # Create your models here.
 
-class predmet(models.Model):
+class car(models.Model):
     id = models.IntegerField(default=0, primary_key=True)
-    nazvanie = models.CharField(max_length=50)
-    time = models.CharField(max_length=50)
-    audit = models.CharField(max_length=50)
+    moddel = models.CharField(max_length=50)
+    voditel = models.CharField(max_length=50)
+    nomer = models.CharField(max_length=50)
+    online = models.CharField(max_length=50)
 
-class uchet(models.Model):
+class order(models.Model):
     id = models.IntegerField(default=0, primary_key=True)
-    login = models.CharField(max_length=50)
-    passw = models.CharField(max_length=50)
-    propusk = models.IntegerField(default=0)
+    nomer = models.CharField(max_length=50)
+    voditel = models.CharField(max_length=50)
+    passajir = models.CharField(max_length=50)
+    naznach = models.CharField(max_length=50)
+    sms = models.IntegerField(default=0)
 
 

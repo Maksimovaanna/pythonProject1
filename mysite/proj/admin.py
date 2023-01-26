@@ -1,23 +1,26 @@
 from django.contrib import admin
-from .models import predmet, uchet
+from .models import car, order
 
 # Register your models here.
 
-class predmetAdmin(admin.ModelAdmin):
+class carAdmin(admin.ModelAdmin):
     fieldsets1 = [
         ('id', {'fields': ['id']}),
-        ('nazvanie', {'fields': ['nazvanie']}),
-        ('time', {'fields': ['time']}),
-        ('audit', {'fields': ['audit']}),
+        ('moddel', {'fields': ['moddel']}),
+        ('voditel', {'fields': ['voditel']}),
+        ('nomer', {'fields': ['nomer']}),
+        ('online', {'fields': ['online']}),
     ]
 
-class uchetAdmin(admin.ModelAdmin):
+class orderAdmin(admin.ModelAdmin):
     fieldsets2 = [
         ('id', {'fields': ['id']}),
-        ('login', {'fields': ['login']}),
-        ('passw', {'fields': ['passw']}),
-        ('propusk', {'fields': ['propusk']}),
+        ('nomer', {'fields': ['nomer']}),
+        ('voditel', {'fields': ['voditel']}),
+        ('passajir', {'fields': ['passajir']}),
+        ('naznach', {'fields': ['naznach']}),
+        ('sms', {'fields': ['sms']}),
     ]
 
-admin.site.register(predmet, predmetAdmin)
-admin.site.register(uchet, uchetAdmin)
+admin.site.register(car, carAdmin)
+admin.site.register(order, orderAdmin)

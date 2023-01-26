@@ -16,23 +16,27 @@
                 id
             </th>
             <th>
-                nazvanie
+                model
             </th>
             <th>
-                time
+                voditel
             </th>
             <th>
-                audit
+                nomer
+            </th>
+            <th>
+                online
             </th>
         </tr>
     </thead>
     <tbody>
-    {% for result in predmet%}
+    {% for result in car%}
     <tr>
         <td>{{result.id}}</td>
-        <td>{{result.nazvanie}}</td>
-        <td>{{result.time}}</td>
-        <td>{{result.audit}}</td>
+        <td>{{result.moddel}}</td>
+        <td>{{result.voditel}}</td>
+        <td>{{result.nomer}}</td>
+        <td>{{result.online}}</td>
     </tr>
     {% endfor %}
     </tbody>
@@ -45,23 +49,31 @@
                 id
             </th>
             <th>
-                login
+                nomer
             </th>
              <th>
-                passw
+                voditel
             </th>
              <th>
-                propusk
+                passajir
+            </th>
+            <th>
+                naznach
+            </th>
+            <th>
+                sms
             </th>
         </tr>
     </thead>
     <tbody>
-    {% for result in uchet%}
+    {% for result in order%}
     <tr>
         <td>{{result.id}}</td>
-        <td>{{result.login}}</td>
-        <td>{{result.passw}}</td>
-        <td>{{result.propusk}}</td>
+        <td>{{result.nomer}}</td>
+        <td>{{result.voditel}}</td>
+        <td>{{result.passajir}}</td>
+        <td>{{result.naznach}}</td>
+        <td>{{result.sms}}</td>
     </tr>
     {% endfor %}
     </tbody>
