@@ -40,4 +40,4 @@ class StudentModelTest(TestCase):
 
     def test_for_records(self):
         expected_num = mygod()
-        self.assertEquals(expected_num, 2)
+        self.assertEquals(expected_num, 3)
