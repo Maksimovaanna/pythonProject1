@@ -19,7 +19,7 @@ def mygod():
     connection = sqlite3.connect('db.sqlite3')
     print(connection)
     cursor = connection.cursor()
-    cursor.execute(f"SELECT * FROM proj_spektakl")
+    cursor.execute(f"SELECT * FROM proj_uchet")
     records = cursor.fetchall()
     num = (len(records))
     return num
